@@ -36,3 +36,22 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(tmp, nmemb * size);
 	return (tmp);
 }
+
+/**
+** @brief Frees a table.
+**
+** @param tab The table to free. Must be NULL-terminated.
+** @return Nothing.
+**/
+void	free_table(char **tab)
+{
+	int	i;
+
+	i = 0;
+	while (tab[i])
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
+}

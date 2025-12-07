@@ -74,6 +74,7 @@ int		ft_toupper(int c);
 
 void	print_int_array(int *array, int size);
 void	print_str_array(char **array);
+void	free_table(char **tab);
 
 /*======== PRINTF ========*/
 
