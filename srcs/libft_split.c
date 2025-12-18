@@ -6,7 +6,7 @@
 /*   By: dnantet <dnantet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 15:25:16 by dnantet           #+#    #+#             */
-/*   Updated: 2025/12/01 10:46:32 by dnantet          ###   ########.fr       */
+/*   Updated: 2025/12/16 18:48:45 by dnantet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,8 @@ char	**ft_split(const char *s, char c)
 	char	*word;
 	char	**tab;
 
+	if (!(s || c))
+		return (NULL);
 	i = 0;
 	tab = ft_calloc((count_words(s, c) + 1), sizeof(char *));
 	if (!tab)

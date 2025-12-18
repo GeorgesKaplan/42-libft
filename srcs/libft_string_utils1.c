@@ -6,7 +6,7 @@
 /*   By: dnantet <dnantet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 17:30:52 by dnantet           #+#    #+#             */
-/*   Updated: 2025/11/28 17:44:30 by dnantet          ###   ########.fr       */
+/*   Updated: 2025/12/16 18:50:09 by dnantet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ char	*ft_strdup(const char *s)
 	size_t	i;
 	char	*cpy;
 
+	if (!s)
+		return (NULL);
 	cpy = ft_calloc((ft_strlen(s) + 1), sizeof(char));
 	if (!cpy)
 		return (NULL);

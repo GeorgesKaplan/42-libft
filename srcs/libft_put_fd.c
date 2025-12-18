@@ -6,7 +6,7 @@
 /*   By: dnantet <dnantet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 17:39:18 by dnantet           #+#    #+#             */
-/*   Updated: 2025/11/28 17:41:06 by dnantet          ###   ########.fr       */
+/*   Updated: 2025/12/15 18:25:25 by dnantet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, 1);
+	if (c)
+		write(fd, &c, 1);
 }
 
 void	ft_putstr_fd(char *s, int fd)
@@ -22,7 +23,7 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
-	while (s[i])
+	while (s && s[i])
 	{
 		ft_putchar_fd(s[i], fd);
 		i++;
