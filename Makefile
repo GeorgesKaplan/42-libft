@@ -30,7 +30,7 @@ $(OBJS_DIR)/%.o: %.c
 	@$(CC) -c $< -o $@
 
 clean:
-	@echo "Removing .o files."
+	@echo "Removing libft .o files."
 	@rm -f $(OBJS)
 
 fclean: clean
