@@ -73,6 +73,7 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 
 int		is_space(char c);
+int		is_operator(char c);
 int		is_string_empty(char *str);
 void	print_int_array(int *array, int size);
 void	print_str_array(char **array);
