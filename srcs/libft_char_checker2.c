@@ -23,6 +23,28 @@ int	is_operator(char c)
 }
 
 /**
+** @brief Checks if a string contains exactly one word.
+**
+** @param str The string to check.
+** @return 0 or 1 as a boolean value.
+**/
+int	is_single_word(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (ft_isdigit(str[i]))
+		i++;
+	while (str[i])
+	{
+		if (!is_space(str[i]))
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+/**
 ** @brief Checks if a string is empty (no characters or only spaces).
 **
 ** @param str The string to check.
