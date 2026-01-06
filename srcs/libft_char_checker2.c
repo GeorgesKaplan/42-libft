@@ -33,14 +33,13 @@ int	is_single_word(char *str)
 	int	i;
 
 	i = 0;
-	while (ft_isdigit(str[i]))
+	while (str[i] && is_space(str[i]))
+		i++;
+	while (str[i] && !is_space(str[i]))
 		i++;
 	while (str[i])
-	{
 		if (!is_space(str[i]))
-			return (0);
-		i++;
-	}
+			return (0)
 	return (1);
 }
 
