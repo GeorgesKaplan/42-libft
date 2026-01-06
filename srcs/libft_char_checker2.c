@@ -39,7 +39,7 @@ int	is_single_word(char *str)
 		i++;
 	while (str[i])
 		if (!is_space(str[i]))
-			return (0)
+			return (0);
 	return (1);
 }
 
