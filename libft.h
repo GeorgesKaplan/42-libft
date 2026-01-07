@@ -6,7 +6,7 @@
 /*   By: dnantet <dnantet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 13:11:31 by dnantet           #+#    #+#             */
-/*   Updated: 2025/12/01 10:51:34 by dnantet          ###   ########.fr       */
+/*   Updated: 2026/01/07 10:30:51 by dnantet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,8 @@ int		ft_toupper(int c);
 
 int		is_space(char c);
 int		is_operator(char c);
-int		is_single_word(char *str);
-int		is_string_empty(char *str);
+int		is_single_word_string(char *str);
+int		is_empty_string(char *str);
 void	print_int_array(int *array, int size);
 void	print_str_array(char **array);
 void	free_table(char **tab);

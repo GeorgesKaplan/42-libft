@@ -6,7 +6,7 @@
 /*   By: dnantet <dnantet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 15:09:07 by dnantet           #+#    #+#             */
-/*   Updated: 2025/11/28 17:25:36 by dnantet          ###   ########.fr       */
+/*   Updated: 2026/01/07 10:35:13 by dnantet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,36 +23,45 @@ int	is_operator(char c)
 }
 
 /**
-** @brief Checks if a string contains exactly one word.
+** @brief Checks if a string contains exactly one word
+** (eventually begins and ends with whitespace).
 **
 ** @param str The string to check.
 ** @return 0 or 1 as a boolean value.
 **/
-int	is_single_word(char *str)
+int	is_single_word_string(char *str)
 {
 	int	i;
+	int	word_found;
 
+	if (!str)
+		return (0);
 	i = 0;
-	while (str[i] && is_space(str[i]))
-		i++;
-	while (str[i] && !is_space(str[i]))
-		i++;
+	word_found = 0;
 	while (str[i])
 	{
 		if (!is_space(str[i]))
-			return (0);
-		i++;
+		{
+			if (word_found)
+				return (0);
+			word_found = 1;
+			while (str[i] && !is_space(str[i]))
+				i++;
+		}
+		else
+			i++;
 	}
-	return (1);
+	return (word_found);
 }
 
 /**
-** @brief Checks if a string is empty (no characters or only spaces).
+** @brief Checks if a string is empty (contains no characters
+** or contains only spaces).
 **
 ** @param str The string to check.
 ** @return 0 or 1 as a boolean value.
 **/
-int	is_string_empty(char *str)
+int	is_empty_string(char *str)
 {
 	const int	size = ft_strlen(str);
 	int			i;
