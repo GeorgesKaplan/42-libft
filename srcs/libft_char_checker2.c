@@ -6,7 +6,7 @@
 /*   By: dnantet <dnantet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 15:09:07 by dnantet           #+#    #+#             */
-/*   Updated: 2026/01/07 10:35:13 by dnantet          ###   ########.fr       */
+/*   Updated: 2026/01/07 10:54:22 by dnantet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	is_space(char c)
 	return (c == 32 || (c >= 9 && c <= 13));
 }
 
-int	is_operator(char c)
+int	is_sign(char c)
 {
 	return (c == '+' || c == '-');
 }
