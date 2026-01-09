@@ -3,6 +3,7 @@ CC = cc
 AR = ar crs
 HEADER = libft.h
 SRCS_DIR = srcs/
+INCLUDES = -Iincludes
 SRCS = $(addprefix $(SRCS_DIR), \
 		libft_char_checker1.c libft_char_checker2.c \
 		libft_converters1.c \
@@ -27,7 +28,7 @@ $(NAME): $(OBJS)
 $(OBJS_DIR)/%.o: %.c
 	@echo "Compiling libft .c files..."
 	@mkdir -p $(@D)
-	@$(CC) -c $< -o $@
+	@$(CC) $(INCLUDES) -c $< -o $@
 
 clean:
 	@echo "Removing libft .o files."

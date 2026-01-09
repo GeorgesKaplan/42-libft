@@ -6,11 +6,11 @@
 /*   By: dnantet <dnantet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 10:13:09 by dnantet           #+#    #+#             */
-/*   Updated: 2025/12/02 15:51:16 by dnantet          ###   ########.fr       */
+/*   Updated: 2026/01/08 21:03:18 by dnantet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 /**
 ** @brief Prints an array of integers.

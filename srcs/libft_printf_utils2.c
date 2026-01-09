@@ -6,11 +6,11 @@
 /*   By: dnantet <dnantet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 18:03:06 by dnantet           #+#    #+#             */
-/*   Updated: 2025/11/28 18:05:20 by dnantet          ###   ########.fr       */
+/*   Updated: 2026/01/08 21:03:20 by dnantet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 int	ft_printchar(int c)
 {

@@ -6,11 +6,11 @@
 /*   By: dnantet <dnantet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 17:46:55 by dnantet           #+#    #+#             */
-/*   Updated: 2025/12/01 18:01:17 by dnantet          ###   ########.fr       */
+/*   Updated: 2026/01/08 21:03:22 by dnantet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 static int	is_set(const char *set, char c)
 {

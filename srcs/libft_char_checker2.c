@@ -6,11 +6,11 @@
 /*   By: dnantet <dnantet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 15:09:07 by dnantet           #+#    #+#             */
-/*   Updated: 2026/01/07 10:54:22 by dnantet          ###   ########.fr       */
+/*   Updated: 2026/01/08 21:03:16 by dnantet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 int	is_space(char c)
 {

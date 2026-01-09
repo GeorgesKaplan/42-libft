@@ -6,11 +6,11 @@
 /*   By: dnantet <dnantet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 17:59:10 by dnantet           #+#    #+#             */
-/*   Updated: 2025/11/28 18:00:30 by dnantet          ###   ########.fr       */
+/*   Updated: 2026/01/08 21:03:19 by dnantet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 static int	converter_process(char c, va_list args)
 {

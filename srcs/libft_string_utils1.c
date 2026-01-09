@@ -6,11 +6,11 @@
 /*   By: dnantet <dnantet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 17:30:52 by dnantet           #+#    #+#             */
-/*   Updated: 2025/12/16 18:50:09 by dnantet          ###   ########.fr       */
+/*   Updated: 2026/01/08 21:03:21 by dnantet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

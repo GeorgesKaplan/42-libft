@@ -6,11 +6,11 @@
 /*   By: dnantet <dnantet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 15:25:16 by dnantet           #+#    #+#             */
-/*   Updated: 2025/12/16 18:48:45 by dnantet          ###   ########.fr       */
+/*   Updated: 2026/01/08 21:03:21 by dnantet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 static int	count_words(const char *str, char sep)
 {
