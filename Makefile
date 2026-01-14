@@ -6,6 +6,7 @@ SRCS_DIR = srcs/
 INCLUDES = -Iincludes
 SRCS = $(addprefix $(SRCS_DIR), \
 		libft_char_checker1.c libft_char_checker2.c \
+		libft_str_checker1.c \
 		libft_converters1.c \
 		libft_list_utils1.c libft_list_utils2.c \
 		libft_memory_utils1.c libft_memory_utils2.c \
