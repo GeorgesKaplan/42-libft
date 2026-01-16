@@ -6,7 +6,7 @@
 /*   By: dnantet <dnantet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 17:46:55 by dnantet           #+#    #+#             */
-/*   Updated: 2026/01/16 10:29:15 by dnantet          ###   ########.fr       */
+/*   Updated: 2026/01/16 10:31:53 by dnantet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,4 +113,3 @@ char	*ft_strjoin(char *s1, const char *s2)
 	legal_free(s1, s1_allocd);
 	return (jstr);
 }
-
