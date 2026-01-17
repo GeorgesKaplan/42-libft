@@ -6,7 +6,7 @@
 /*   By: dnantet <dnantet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 13:11:31 by dnantet           #+#    #+#             */
-/*   Updated: 2026/01/14 13:25:01 by dnantet          ###   ########.fr       */
+/*   Updated: 2026/01/17 13:20:37 by dnantet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ int		ft_toupper(int c);
 
 int		is_space(char c);
 int		is_sign(char c);
+int		is_uppercase(int c);
+int		is_lowercase(int c);
 int		is_number(char *str);
 int		is_single_word_string(char *str);
 int		is_empty_string(char *str);
