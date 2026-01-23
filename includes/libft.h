@@ -6,7 +6,7 @@
 /*   By: dnantet <dnantet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 13:11:31 by dnantet           #+#    #+#             */
-/*   Updated: 2026/01/17 13:20:37 by dnantet          ###   ########.fr       */
+/*   Updated: 2026/01/23 13:35:24 by dnantet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,8 @@ int		is_lowercase(int c);
 int		is_number(char *str);
 int		is_single_word_string(char *str);
 int		is_empty_string(char *str);
-void	print_int_array(int *array, int size);
-void	print_str_array(char **array);
+// void	print_int_array(int *array, int size);
+// void	print_str_array(char **array);
 void	free_table(char **tab);
 
 /*======== PRINTF ========*/

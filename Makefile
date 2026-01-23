@@ -10,13 +10,12 @@ SRCS = $(addprefix $(SRCS_DIR), \
 		libft_converters1.c \
 		libft_list_utils1.c libft_list_utils2.c \
 		libft_memory_utils1.c libft_memory_utils2.c \
-		libft_printers1.c \
 		libft_put_fd.c \
 		libft_split.c \
 		libft_string_utils1.c libft_string_utils2.c libft_string_utils3.c \
 		libft_string_utils4.c \
 		libft_printf_utils1.c libft_printf_utils2.c libft_printf_utils3.c \
-		libft_gnl.c)
+		libft_gnl.c) # 		libft_printers1.c
 OBJS_DIR = objs/
 OBJS = $(SRCS:%.c=$(OBJS_DIR)/%.o)
 
