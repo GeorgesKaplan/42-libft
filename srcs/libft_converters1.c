@@ -6,7 +6,7 @@
 /*   By: dnantet <dnantet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 17:27:22 by dnantet           #+#    #+#             */
-/*   Updated: 2026/01/08 21:03:17 by dnantet          ###   ########.fr       */
+/*   Updated: 2026/02/02 12:53:24 by dnantet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int	ft_atoi(const char *nptr)
 	int	nb;
 	int	sign;
 
+	if (!nptr)
+		return (0);
 	i = 0;
 	nb = 0;
 	sign = 1;
