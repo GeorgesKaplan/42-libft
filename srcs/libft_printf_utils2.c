@@ -6,7 +6,7 @@
 /*   By: dnantet <dnantet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 18:03:06 by dnantet           #+#    #+#             */
-/*   Updated: 2026/02/10 11:15:34 by dnantet          ###   ########.fr       */
+/*   Updated: 2026/02/10 12:23:35 by dnantet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_printchar(int c)
 {
-	write(2, &c, 1);
+	write(STDERR_FILENO, &c, 1);
 	return (1);
 }
 
