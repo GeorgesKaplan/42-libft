@@ -6,7 +6,7 @@
 /*   By: dnantet <dnantet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 15:25:16 by dnantet           #+#    #+#             */
-/*   Updated: 2026/01/08 21:03:21 by dnantet          ###   ########.fr       */
+/*   Updated: 2026/02/20 11:43:26 by dnantet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static void	fill_word(char *slot, char const *word, int const size)
 	slot[i] = '\0';
 }
 
-static void	*free_all(char **tab, int wcount)
+void	*free_all(char **tab, int wcount)
 {
 	int	i;
 
