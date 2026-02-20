@@ -6,7 +6,7 @@
 /*   By: dnantet <dnantet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 11:40:57 by dnantet           #+#    #+#             */
-/*   Updated: 2026/02/20 12:20:43 by dnantet          ###   ########.fr       */
+/*   Updated: 2026/02/20 12:38:32 by dnantet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,38 +22,39 @@ static char	**init_split_keep_arr(char *str, char sep)
 	return (arr);
 }
 
-static void	init_split_keep_indexes(int *indexes[4]) // i, j, start, idx
+static void	init_split_keep_indexes(int indexes[4])
 {
-	*indexes[0] = 0;
-	*indexes[1] = 0;
-	*indexes[2] = 0;
-	*indexes[3] = 0;
+	indexes[0] = 0;
+	indexes[1] = 0;
+	indexes[2] = 0;
+	indexes[3] = 0;
 }
 
-static void	split_keep_continued(char *str, char sep, char **arr,
-	int *indexes[4]) // i, j, start, idx
+static char	**split_keep_continued(char *str, char sep, char **arr,
+	int indexes[4])
 {
-	if (str[*indexes[0]] == sep)
+	if (str[indexes[0]] == sep)
 	{
-		if (*indexes[0] > *indexes[2])
+		if (indexes[0] > indexes[2])
 		{
-			arr[*indexes[3]] = ft_substr(str, *indexes[2],
-					*indexes[0] - *indexes[2]);
-			if (!arr[(*indexes[3])++])
-				return (free_all(arr, (*indexes[3]) - 1));
+			arr[indexes[3]] = ft_substr(str, indexes[2],
+					indexes[0] - indexes[2]);
+			if (!arr[(indexes[3])++])
+				return (free_all(arr, (indexes[3]) - 1));
 		}
-		*indexes[1] = *indexes[0] + 1;
-		while (str[*indexes[1]] && str[*indexes[1]] != sep)
-			(*indexes[1])++;
-		arr[*indexes[3]] = ft_substr(str, *indexes[0],
-				(*indexes[1]) - *indexes[0]);
-		if (!arr[(*indexes[3])++])
-			return (free_all(arr, (*indexes[3]) - 1));
-		*indexes[0] = *indexes[1];
-		*indexes[2] = *indexes[1];
+		indexes[1] = indexes[0] + 1;
+		while (str[indexes[1]] && str[indexes[1]] != sep)
+			(indexes[1])++;
+		arr[indexes[3]] = ft_substr(str, indexes[0],
+				(indexes[1]) - indexes[0]);
+		if (!arr[(indexes[3])++])
+			return (free_all(arr, (indexes[3]) - 1));
+		indexes[0] = indexes[1];
+		indexes[2] = indexes[1];
 	}
 	else
-		(*indexes[0])++;
+		(indexes[0])++;
+	return (arr);
 }
 
 /**
@@ -68,9 +69,10 @@ char	**ft_split_keep(char *str, char sep)
 	arr = init_split_keep_arr(str, sep);
 	if (!arr)
 		return (NULL);
-	init_split_keep_indexes(&indexes);
+	init_split_keep_indexes(indexes);
 	while (str[indexes[0]])
-		split_keep_continued(str, sep, arr, &indexes);
+		if (!split_keep_continued(str, sep, arr, indexes))
+			return (NULL);
 	if (indexes[0] > indexes[2])
 	{
 		arr[indexes[3]] = ft_substr(str, indexes[2], indexes[0] - indexes[2]);
