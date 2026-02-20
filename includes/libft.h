@@ -6,7 +6,7 @@
 /*   By: dnantet <dnantet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 13:11:31 by dnantet           #+#    #+#             */
-/*   Updated: 2026/02/20 11:56:39 by dnantet          ###   ########.fr       */
+/*   Updated: 2026/02/20 12:30:26 by dnantet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int		is_empty_string(char *str);
 // void	print_int_array(int *array, int size);
 // void	print_str_array(char **array);
 void	free_table(char **tab);
-char	*rejoin(char **arr);
+char	*ft_rejoin(char **arr);
 char	**ft_split_keep(char *str, char sep);
 void	*free_all(char **tab, int wcount);
 int		count_parts(char *str, char sep);

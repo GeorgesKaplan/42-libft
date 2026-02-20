@@ -6,7 +6,7 @@
 /*   By: dnantet <dnantet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 13:19:18 by dnantet           #+#    #+#             */
-/*   Updated: 2026/02/20 11:29:09 by dnantet          ###   ########.fr       */
+/*   Updated: 2026/02/20 12:30:24 by dnantet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char	*ft_strstr(const char *big, const char *little)
 *
 * @return A single string allocated in memory.
 */
-char	*rejoin(char **arr)
+char	*ft_rejoin(char **arr)
 {
 	int		i;
 	char	*line;

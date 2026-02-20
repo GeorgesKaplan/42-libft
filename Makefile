@@ -11,7 +11,7 @@ SRCS = $(addprefix $(SRCS_DIR), \
 		libft_list_utils1.c libft_list_utils2.c \
 		libft_memory_utils1.c libft_memory_utils2.c \
 		libft_put_fd.c \
-		libft_split.c \
+		libft_split.c libft_split_keep.c libft_split_keep_utils.c\
 		libft_string_utils1.c libft_string_utils2.c libft_string_utils3.c \
 		libft_string_utils4.c \
 		libft_printf_utils1.c libft_printf_utils2.c libft_printf_utils3.c \
