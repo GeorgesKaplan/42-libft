@@ -6,7 +6,7 @@
 /*   By: dnantet <dnantet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 17:46:55 by dnantet           #+#    #+#             */
-/*   Updated: 2026/01/16 10:31:53 by dnantet          ###   ########.fr       */
+/*   Updated: 2026/02/23 11:10:34 by dnantet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,39 +77,4 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 		i++;
 	}
 	return (sub);
-}
-
-static void	legal_free(char *s1, int s1_allocd)
-{
-	if (s1 && s1_allocd)
-		free(s1);
-}
-
-char	*ft_strjoin(char *s1, const char *s2)
-{
-	char	*jstr;
-	int		i;
-	int		j;
-	int		s1_allocd;
-
-	i = 0;
-	j = 0;
-	s1_allocd = 0;
-	if (!s1)
-	{
-		s1 = (char *)ft_calloc(1, sizeof(char));
-		s1_allocd = 1;
-	}
-	jstr = ft_calloc((ft_strlen(s1) + ft_strlen(s2) + 1), sizeof(char));
-	if (!jstr)
-		return (NULL);
-	while (s1 && s1[i])
-	{
-		jstr[i] = s1[i];
-		i++;
-	}
-	while (s2[j])
-		jstr[i++] = s2[j++];
-	legal_free(s1, s1_allocd);
-	return (jstr);
 }
