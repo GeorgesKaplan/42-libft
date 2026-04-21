@@ -94,13 +94,13 @@ int		count_parts(char *str, char sep);
 int		ft_get_nb_size(long n);
 int		ft_get_nb_mag(int size);
 
-int		ft_printchar(int c);
-int		ft_printstr(char *str);
-int		ft_printint(int n);
-int		ft_printuint(unsigned int n);
-int		ft_printhex(unsigned int n, int isupper);
-int		ft_printaddress(void *ptr);
-int		ft_printf(const char *str, ...) __attribute__((format(printf, 1, 2)));
+int		ft_fdprintchar(int fd, int c);
+int		ft_fdprintstr(int fd, char *str);
+int		ft_fdprintint(int fd, int n);
+int		ft_printuint(int fd, unsigned int n);
+int		ft_fdprinthex(int fd, unsigned int n, int isupper);
+int		ft_fdprintaddress(int fd, void *ptr);
+int		ft_printf(int fd, const char *str, ...) __attribute__((format(printf, 2, 3)));
 
 /*======== GNL ========*/
 
