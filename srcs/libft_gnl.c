@@ -6,7 +6,7 @@
 /*   By: dnantet <dnantet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 10:25:28 by dnantet           #+#    #+#             */
-/*   Updated: 2026/01/08 21:03:17 by dnantet          ###   ########.fr       */
+/*   Updated: 2026/05/02 13:55:02 by dnantet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,22 @@ static int	check_for_new_line(char *str)
 		i++;
 	}
 	return (0);
+}
+
+static char	*create_line_continued(ssize_t prog, char *line, char *buf)
+{
+	char	*tmp;
+
+	buf[prog] = '\0';
+	tmp = line;
+	line = ft_strjoin(line, buf);
+	free(tmp);
+	if (!line)
+	{
+		free(buf);
+		return (NULL);
+	}
+	return (line);
 }
 
 static char	*create_line(int fd, char *line)
@@ -45,8 +61,9 @@ static char	*create_line(int fd, char *line)
 		}
 		if (prog == 0)
 			break ;
-		buf[prog] = '\0';
-		line = ft_strjoin(line, buf);
+		line = create_line_continued(prog, line, buf);
+		if (!line)
+			return (NULL);
 		if (check_for_new_line(buf))
 			break ;
 	}
