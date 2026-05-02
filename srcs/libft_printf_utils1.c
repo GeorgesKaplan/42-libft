@@ -12,29 +12,29 @@
 
 #include "libft.h"
 
-static int	converter_process(char c, va_list args)
+static int	converter_process(int fd, char c, va_list args)
 {
 	int	size;
 
 	size = 0;
 	if (c == 'c')
-		size += (ft_printchar(va_arg(args, int)));
+		size += (ft_fdprintchar(fd, va_arg(args, int)));
 	else if (c == 's')
-		size += (ft_printstr(va_arg(args, char *)));
+		size += (ft_fdprintstr(fd, va_arg(args, char *)));
 	else if (c == 'p')
-		size += (ft_printaddress(va_arg(args, void *)));
+		size += (ft_fdprintaddress(fd, va_arg(args, void *)));
 	else if (c == 'd' || c == 'i')
-		size += (ft_printint(va_arg(args, int)));
+		size += (ft_fdprintint(fd, va_arg(args, int)));
 	else if (c == 'u')
-		size += (ft_printuint(va_arg(args, unsigned int)));
+		size += (ft_printuint(fd, va_arg(args, unsigned int)));
 	else if (c == 'x' || c == 'X')
-		size += (ft_printhex(va_arg(args, int), c == 'X'));
+		size += (ft_fdprinthex(fd, va_arg(args, int), c == 'X'));
 	else if (c == '%')
-		size += (ft_printchar('%'));
+		size += (ft_fdprintchar(fd, '%'));
 	return (size);
 }
 
-int	ft_printf(const char *str, ...)
+int	ft_fdprintf(int fd, const char *str, ...)
 {
 	int		i;
 	int		nb_char;
@@ -49,12 +49,12 @@ int	ft_printf(const char *str, ...)
 	{
 		if (str[i] == '%')
 		{
-			nb_char += converter_process(str[i + 1], args);
+			nb_char += converter_process(fd, str[i + 1], args);
 			i++;
 		}
 		else
 		{
-			ft_printchar(str[i]);
+			ft_fdprintchar(fd, str[i]);
 			nb_char++;
 		}
 		i++;

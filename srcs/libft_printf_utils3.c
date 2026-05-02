@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_printhex(unsigned int n, int isupper)
+int	ft_fdprinthex(int fd, unsigned int n, int isupper)
 {
 	int				i;
 	unsigned int	rem;
@@ -22,7 +22,7 @@ int	ft_printhex(unsigned int n, int isupper)
 	i = 0;
 	if (n == 0)
 	{
-		size = ft_printchar('0');
+		size = ft_fdprintchar(fd, '0');
 		return (size);
 	}
 	while (n > 0)
@@ -37,11 +37,11 @@ int	ft_printhex(unsigned int n, int isupper)
 	}
 	size = 0;
 	while (--i >= 0)
-		size += ft_printchar(buf[i]);
+		size += ft_fdprintchar(fd, buf[i]);
 	return (size);
 }
 
-static int	ulongtohex(unsigned long n)
+static int	ulongtohex(int fd, unsigned long n)
 {
 	int				i;
 	unsigned long	rem;
@@ -51,7 +51,7 @@ static int	ulongtohex(unsigned long n)
 	i = 0;
 	if (n == 0)
 	{
-		size = ft_printchar('0');
+		size = ft_fdprintchar(fd, '0');
 		return (size);
 	}
 	while (n > 0)
@@ -66,11 +66,11 @@ static int	ulongtohex(unsigned long n)
 	}
 	size = 0;
 	while (--i >= 0)
-		size += ft_printchar(buf[i]);
+		size += ft_fdprintchar(fd, buf[i]);
 	return (size);
 }
 
-int	ft_printaddress(void *ptr)
+int	ft_fdprintaddress(int fd, void *ptr)
 {
 	int				size;
 	unsigned long	address;
@@ -78,11 +78,11 @@ int	ft_printaddress(void *ptr)
 	address = (unsigned long)ptr;
 	if (!ptr)
 	{
-		size = ft_printstr("(nil)");
+		size = ft_fdprintstr(fd, "(nil)");
 		return (size);
 	}
-	size = ft_printstr("0x");
-	size += ulongtohex(address);
+	size = ft_fdprintstr(fd, "0x");
+	size += ulongtohex(fd, address);
 	return (size);
 }
 

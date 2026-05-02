@@ -6,7 +6,7 @@
 /*   By: dnantet <dnantet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 10:13:09 by dnantet           #+#    #+#             */
-/*   Updated: 2026/01/08 21:03:18 by dnantet          ###   ########.fr       */
+/*   Updated: 2026/05/02 12:42:16 by dnantet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,18 @@ void	print_int_array(int *array, int size)
 	i = 0;
 	if (array == NULL || size == 0)
 	{
-		ft_printf("[]");
+		ft_fdprintf(STDOUT_FILENO, "[]");
 		return ;
 	}
-	ft_printf("[");
+	ft_fdprintf(STDOUT_FILENO, "[");
 	while (i < size)
 	{
-		ft_printf("%d", array[i]);
+		ft_fdprintf(STDOUT_FILENO, "%d", array[i]);
 		if (i < (size - 1))
-			ft_printf(", ");
+			ft_fdprintf(STDOUT_FILENO, ", ");
 		i++;
 	}
-	ft_printf("]");
+	ft_fdprintf(STDOUT_FILENO, "]");
 }
 
 /**
@@ -53,16 +53,16 @@ void	print_str_array(char **array)
 	i = 0;
 	if (*array == NULL)
 	{
-		ft_printf("[]");
+		ft_fdprintf(STDOUT_FILENO, "[]");
 		return ;
 	}
-	ft_printf("[");
+	ft_fdprintf(STDOUT_FILENO, "[");
 	while (array[i])
 	{
-		ft_printf("\"%s\"", array[i]);
+		ft_fdprintf(STDOUT_FILENO, "\"%s\"", array[i]);
 		if (array[i + 1] != NULL)
-			ft_printf(", ");
+			ft_fdprintf(STDOUT_FILENO, ", ");
 		i++;
 	}
-	ft_printf("]");
+	ft_fdprintf(STDOUT_FILENO, "]");
 }

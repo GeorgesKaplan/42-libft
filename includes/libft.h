@@ -6,7 +6,7 @@
 /*   By: dnantet <dnantet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 13:11:31 by dnantet           #+#    #+#             */
-/*   Updated: 2026/02/23 11:21:35 by dnantet          ###   ########.fr       */
+/*   Updated: 2026/05/02 12:41:34 by dnantet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,8 @@ int		is_lowercase(int c);
 int		is_number(char *str);
 int		is_single_word_string(char *str);
 int		is_empty_string(char *str);
-// void	print_int_array(int *array, int size);
-// void	print_str_array(char **array);
+void	print_int_array(int *array, int size);
+void	print_str_array(char **array);
 void	free_table(char **tab);
 char	*ft_rejoin(char **arr);
 char	**ft_split_keep(char *str, char sep);
@@ -94,13 +94,13 @@ int		count_parts(char *str, char sep);
 int		ft_get_nb_size(long n);
 int		ft_get_nb_mag(int size);
 
-int		ft_printchar(int c);
-int		ft_printstr(char *str);
-int		ft_printint(int n);
-int		ft_printuint(unsigned int n);
-int		ft_printhex(unsigned int n, int isupper);
-int		ft_printaddress(void *ptr);
-int		ft_printf(const char *str, ...) __attribute__((format(printf, 1, 2)));
+int		ft_fdprintchar(int fd, int c);
+int		ft_fdprintstr(int fd, char *str);
+int		ft_fdprintint(int fd, int n);
+int		ft_printuint(int fd, unsigned int n);
+int		ft_fdprinthex(int fd, unsigned int n, int isupper);
+int		ft_fdprintaddress(int fd, void *ptr);
+int		ft_fdprintf(int fd, const char *str, ...) __attribute__((format(printf, 2, 3)));
 
 /*======== GNL ========*/
 

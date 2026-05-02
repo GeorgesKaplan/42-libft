@@ -12,28 +12,28 @@
 
 #include "libft.h"
 
-int	ft_printchar(int c)
+int	ft_fdprintchar(int fd, int c)
 {
-	write(STDERR_FILENO, &c, 1);
+	write(fd, &c, 1);
 	return (1);
 }
 
-int	ft_printstr(char *str)
+int	ft_fdprintstr(int fd, char *str)
 {
 	int	i;
 
 	if (!str)
 	{
-		i = ft_printstr("(null)");
+		i = ft_fdprintstr(fd, "(null)");
 		return (i);
 	}
 	i = 0;
 	while (str && str[i])
-		i += ft_printchar(str[i]);
+		i += ft_fdprintchar(fd, str[i]);
 	return (i);
 }
 
-int	ft_printint(int n)
+int	ft_fdprintint(int fd, int n)
 {
 	int	size;
 	int	mag;
@@ -42,11 +42,11 @@ int	ft_printint(int n)
 
 	sign = 0;
 	if (n == -2147483648)
-		return (ft_printstr("-2147483648"));
+		return (ft_fdprintstr(fd, "-2147483648"));
 	if (n < 0)
 	{
 		n *= -1;
-		sign += ft_printchar('-');
+		sign += ft_fdprintchar(fd, '-');
 	}
 	size = ft_get_nb_size(n);
 	mag = ft_get_nb_mag(size);
@@ -54,14 +54,14 @@ int	ft_printint(int n)
 	while (mag > 0)
 	{
 		n /= mag;
-		ft_printchar(n + '0');
+		ft_fdprintchar(fd, n + '0');
 		n = tmp % mag;
 		mag /= 10;
 	}
 	return (size + sign);
 }
 
-int	ft_printuint(unsigned int n)
+int	ft_printuint(int fd, unsigned int n)
 {
 	int				size;
 	int				mag;
@@ -73,7 +73,7 @@ int	ft_printuint(unsigned int n)
 	while (mag > 0)
 	{
 		n /= mag;
-		ft_printchar(n + '0');
+		ft_fdprintchar(fd, n + '0');
 		n = tmp % mag;
 		mag /= 10;
 	}
