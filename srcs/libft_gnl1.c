@@ -6,7 +6,7 @@
 /*   By: dnantet <dnantet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 10:25:28 by dnantet           #+#    #+#             */
-/*   Updated: 2026/05/02 13:55:02 by dnantet          ###   ########.fr       */
+/*   Updated: 2026/05/06 12:52:38 by dnantet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,11 +93,12 @@ static char	*gnl_start(char *full_line)
 
 char	*get_next_line(int fd)
 {
-	static char	*next_line_start[1024];
+	char		**next_line_start;
 	char		*full_line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
+	next_line_start = get_gnl_storage();
 	full_line = create_line(fd, next_line_start[fd]);
 	if (!full_line)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: dnantet <dnantet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 13:11:31 by dnantet           #+#    #+#             */
-/*   Updated: 2026/05/02 12:41:34 by dnantet          ###   ########.fr       */
+/*   Updated: 2026/05/06 12:56:45 by dnantet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,10 +100,13 @@ int		ft_fdprintint(int fd, int n);
 int		ft_printuint(int fd, unsigned int n);
 int		ft_fdprinthex(int fd, unsigned int n, int isupper);
 int		ft_fdprintaddress(int fd, void *ptr);
-int		ft_fdprintf(int fd, const char *str, ...) __attribute__((format(printf, 2, 3)));
+int		ft_fdprintf(int fd, const char *str, ...) __attribute__(
+			(format(printf, 2, 3)));
 
 /*======== GNL ========*/
 
 char	*get_next_line(int fd);
+char	**get_gnl_storage(void);
+void	clear_get_next_line(int fd);
 
 #endif
